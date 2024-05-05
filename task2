@@ -1,0 +1,68 @@
+import java.util.Scanner;
+ class extra{
+     public int divi( int n, int sum) {
+         int s = sum;
+         int d;
+         if ((s % n) > n) {
+            return d = ((s % n) / n);
+         }
+         else if ((s % n) < n)
+         {
+             return d = ((s % n) * 10 / n);
+         }
+         return s;
+     }
+public int grade(double per)
+{
+    char g;
+    if(per>90)
+       return g='A';
+    else if (per>80&&per<90)
+       return g='B';
+    else if (per>70&&per<80)
+       return g='C';
+    else if (per>60&&per<70)
+      return g='D';
+    else
+      return g='E';
+}
+
+}
+public class task2
+{
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        extra ex =new extra();
+        int sum=0;
+
+        System.out.println("Enter your no. of subjects: ");
+        int n = sc.nextInt();
+
+        int[] marks = new int[n];
+        for (int i = 0; i < n; i++) {
+            System.out.println("Enter your marks in subject" + (i + 1));
+            marks[i] = sc.nextInt();
+
+        }
+            System.out.print("User-defined array: [");
+            for (int i = 0; i < n; i++) {
+                System.out.print(marks[i]);
+                if (i < n - 1) {
+                    System.out.print(", ");
+                sum=sum+marks[i];
+                }
+            }
+            System.out.println("]");
+        System.out.println(sum);
+        //int d ;
+        int avg=sum/n;
+       int deci=ex.divi(n,sum);
+       double per= Integer.parseInt((avg+"."+deci));
+
+       System.out.println(per);
+
+       int grd=ex.grade(per);
+        System.out.println("your total maarks is: "+sum+" your average percentage is: "+per+" your grade is: "+grd);
+
+    }
+}
